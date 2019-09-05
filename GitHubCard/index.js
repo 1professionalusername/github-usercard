@@ -1,5 +1,5 @@
 /* Step 1: using axios, send a GET request to the following URL 
-           (replacing the palceholder with your Github name):
+           (replacing the placeholder with your Github name):
            https://api.github.com/users/<your name>
 */
 
@@ -35,7 +35,7 @@ const followersArray = [];
     <h3 class="name">{users name}</h3>
     <p class="username">{users user name}</p>
     <p>Location: {users location}</p>
-    <p>Profile:  
+    <p>Profile:
       <a href={address to users github page}>{address to users github page}</a>
     </p>
     <p>Followers: {users followers count}</p>
@@ -43,13 +43,82 @@ const followersArray = [];
     <p>Bio: {users bio}</p>
   </div>
 </div>
-
 */
 
-/* List of LS Instructors Github username's: 
+/* List of LS Instructors Github username's:
   tetondan
   dustinmyers
   justsml
   luishrd
   bigknell
 */
+axios.get('https://api.github.com/users/1professionalusername')
+  .then(response => {
+    console.log(response)
+  })
+  .catch(err => {
+
+  })
+
+//create elements
+// function createCard(imgUrl) {
+//   const newcard = document.createElement('div')
+//   newimage = document.createElement("img"),
+//     cardinfo = document.createElement("div"),
+//     name = document.createElement("h3");
+//   username = document.createElement("p"),
+//     location = document.createElement("p"),
+//     followers = document.createElement("p");
+//   following = document.createElement("p"),
+//     bio = document.createElement("p"),
+
+//     //content
+//     name.textContent = "blue";
+//   newimage.src = 'blue';
+
+//   //classes
+//   newcard.classList.add("card");
+//   cardInfo.classList.add("card-info");
+//   name.classList.add('name');
+//   username.classList.add('username');
+
+//   //append
+//   newCard.appendChild(newImage);
+//   newCard.appendChild(cardInfo);
+//   cardInfo.appendChild(name);
+//   cardInfo.appendChild(username);
+//   cardInfo.appendChild(location);
+//   cardInfo.appendChild(profile);
+//   profile.appendChild(a);
+//   cardInfo.appendChild(followers);
+//   cardInfo.appendChild(following);
+//   cardInfo.appendChild(bio);
+
+//   // add this functionality later
+//   newCard.addEventListener("click", () => {
+//     newCard.classList.toggle("selected");
+//   });
+
+//   return createCard;
+// }
+
+function DogCard(imgUrl) {
+  const
+    newCard = document.createElement("div"),
+    newImage = document.createElement("h3"),
+    breed = document.createElement("h3");
+
+  breed.textContent = "Breed: Mastiff";
+  newImage.textContent = "Breed";
+  newImage.classList.add("dog-image");
+  newCard.classList.add("dog-card");
+  newCard.appendChild(newImage);
+  newCard.appendChild(breed);
+
+  // add this functionality later
+  newCard.addEventListener("click", () => {
+    newCard.classList.toggle("selected");
+  });
+
+  return newCard;
+}
